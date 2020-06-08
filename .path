@@ -1,4 +1,4 @@
-. ${HOME}/dotfiles/etcj/appendpath
+. ${HOME}/dotfiles/etc/appendpath
 
 append_path left "/usr/local/bin"
 
