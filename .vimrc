@@ -23,7 +23,7 @@ set showcmd                     " 入力中のコマンドを画面の最下部�
 
 syntax on                       " シンタックスハイライト
 set cursorline                  " カーソル行をハイライト
-set cursorcolumn                " カーソル位置のカラムをハイライト
+"set cursorcolumn                " カーソル位置のカラムをハイライト
 set colorcolumn=80              " 80行目に色をつける
 
 set nowrap                      " 折り返さない
@@ -117,7 +117,7 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
-" j, k による移動を折り返されたテキストでも自然に振る舞うように変更
+" j,k による移動を折り返されたテキストでも自然に振る舞うように変更
 nnoremap j gj
 nnoremap k gk
 
@@ -140,3 +140,23 @@ nnoremap <S-Down>  <C-w>+<CR>
 " タブ間の移動
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+
+
+"--------------------------------------------------
+" NERDTree
+"--------------------------------------------------
+" Show hidden files.
+let NERDTreeShowHidden=1
+
+" Set files to be hidden.
+let NERDTreeIgnore=['\.DS_Store$']
+
+" Toggle by 'Cntl+b'
+map <C-b> :NERDTreeToggle<CR>
+
+" Open NERDTree automatically when no files were specified.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Close if only NERDTree window exists.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
