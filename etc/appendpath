@@ -1,0 +1,22 @@
+# add path to PATH
+# @param left (optional) where to add the path
+# @param pathtoadd path to be added
+append_path() {
+    if [[ $# -eq 1 ]]; then
+        isleft=""
+        pathtoadd="${1%/}" # if there is a / at the end, delete it.
+    elif [[ $# -eq 2 ]]; then
+        isleft=$1
+        pathtoadd="${2%/}" # if there is a / at the end, delete it.
+    else
+        exit 1
+    fi
+    # Add a path only if the directory exists and the path does not exist in PATH.
+    if [[ -d "$pathtoadd" && $(echo $PATH | grep -E -c "(^|:)$pathtoadd($|:)") -eq 0 ]]; then
+        if [[ $isleft -eq "left" ]]; then
+            PATH="$pathtoadd:$PATH"
+        else
+            PATH="$PATH:$pathtoadd"
+        fi;
+    fi
+}

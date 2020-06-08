@@ -1,0 +1,13 @@
+. ${HOME}/dotfiles/etcj/appendpath
+
+append_path left "/usr/local/bin"
+
+# android sdk, ndk
+append_path "$HOME/Library/Android/sdk/platform-tools"
+append_path "$HOME/Library/Android/sdk/ndk-bundle"
+
+# mongodb
+append_path "/usr/local/opt/mongodb-community@4.0/bin"
+
+# tcl-tk
+append_path "/usr/local/opt/tcl-tk/bin"
