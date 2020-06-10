@@ -16,9 +16,10 @@ set fileformats=unix,dos,mac    " 改行コード自動判別(優先順)
 "--------------------------------------------------
 set t_Co=256                    " ターミナルで256色表示を使用
 set number                      " 行番号の表示
-set ruler                       " 右下に行・列番号を表示
+"set ruler                       " 右下に行・列番号を表示
 "set list                        " 不可視文字を表示
 "set listchars=eol:\|,tab:>-,trail:~ " 不可視文字の置き換え設定
+set noshowmode                  " 最下部のmode表示をoff(pluginで表示するため)
 set showcmd                     " 入力中のコマンドを画面の最下部に表示
 
 syntax on                       " シンタックスハイライト
@@ -48,6 +49,8 @@ set novisualbell                " ビジュアルベル抑制
 set visualbell t_vb=            " ビープ音抑制
 
 set history=100                 " コマンド、検索履歴数
+
+set scrolloff=5                 " 画面に余裕をもたせてスクロール
 
 set infercase                   " 補完時に大文字小文字を区別しない
 set wildmenu                    " ファイル名補完有効
@@ -110,16 +113,16 @@ nmap <silent> <Esc><Esc> :nohlsearch<CR>
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
 
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
+"nnoremap n nzz
+"nnoremap N Nzz
+"nnoremap * *zz
+"nnoremap # #zz
+"nnoremap g* g*zz
+"nnoremap g# g#zz
 
 " j,k による移動を折り返されたテキストでも自然に振る舞うように変更
-nnoremap j gj
-nnoremap k gk
+nnoremap <silent> j gj
+nnoremap <silent> k gk
 
 " TABにて対応ペアにジャンプ
 nnoremap <Tab> %
@@ -160,3 +163,19 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Close if only NERDTree window exists.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+"--------------------------------------------------
+" lightline
+"--------------------------------------------------
+" Display status bar always.
+set laststatus=2
+
+
+"--------------------------------------------------
+" vim-indent-guides
+"--------------------------------------------------
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_exclude_filetypes=['help','nerdtree','unite']
