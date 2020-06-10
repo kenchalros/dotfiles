@@ -3,8 +3,8 @@
 #--------------------------------------
 set editing-mode vi
 set show-mode-in-prompt on
-set vi-ins-mode-string \1\e[34;1m\2[ins] \1\e[0m\2
-set vi-cmd-mode-string \1\e[31;1m\2[cmd] \1\e[0m\2
+set vi-ins-mode-string \1\e[38;05;45;1m\2INS\xE2\x9D\xAF \1\e[0m\2
+set vi-cmd-mode-string \1\e[38;05;118;1m\2CMD\xE2\x9D\xAF \1\e[0m\2
 
 
 "\ev" edit-and-execute-command
@@ -12,10 +12,16 @@ set vi-cmd-mode-string \1\e[31;1m\2[cmd] \1\e[0m\2
 "\C-n": history-search-forward
 
 
+#--------------------------------------
+# Command mode setting
+#--------------------------------------
 set keymap vi-command
 "v": ""
 
 
+#--------------------------------------
+# Insert mode setting
+#--------------------------------------
 set keymap vi-insert
 "jk": vi-movement-mode
 
