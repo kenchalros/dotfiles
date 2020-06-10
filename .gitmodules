@@ -7,3 +7,6 @@
 [submodule ".vim/pack/plugins/start/lightline.vim"]
 	path = .vim/pack/plugins/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule ".vim/pack/plugins/start/vim-indent-guides"]
+	path = .vim/pack/plugins/start/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
