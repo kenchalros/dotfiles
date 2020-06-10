@@ -4,7 +4,7 @@
 set editing-mode vi
 set show-mode-in-prompt on
 set vi-ins-mode-string \1\e[38;05;45;1m\2INS\xE2\x9D\xAF \1\e[0m\2
-set vi-cmd-mode-string \1\e[38;05;118;1m\2CMD\xE2\x9D\xAF \1\e[0m\2
+set vi-cmd-mode-string \1\e[38;05;208;1m\2CMD\xE2\x9D\xAF \1\e[0m\2
 
 
 "\ev" edit-and-execute-command
