@@ -4,3 +4,6 @@
 [submodule ".vim/pack/plugins/start/unite.vim"]
 	path = .vim/pack/plugins/start/unite.vim
 	url = https://github.com/Shougo/unite.vim.git
+[submodule ".vim/pack/plugins/start/lightline.vim"]
+	path = .vim/pack/plugins/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
