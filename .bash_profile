@@ -34,7 +34,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=true # 追跡されていないファイルが存在�
 GIT_PS1_SHOWUPSTREAM="auto" # 上流からの進み,戻り,分岐(<,>,<>).
 
 export PROMPT_DIRTRIM=2
-export PS1="\n${BDIR}${WHITE} \w ${COLOR_OFF}${BON} on ${COLOR_OFF}${BGIT}${WHITE} \$(__git_ps1 "%s") ${COLOR_OFF}\n"
+export PS1="\n${BDIR}${WHITE} \w ${COLOR_OFF}\$(__git_ps1 '${BON} on ${COLOR_OFF}${BGIT}${WHITE} %s ${COLOR_OFF}') \n"
 
 
 #---------------------------------------------------
