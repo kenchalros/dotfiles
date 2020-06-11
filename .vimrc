@@ -68,6 +68,25 @@ set virtualedit+=block          " 短径選択でカーソル位置の制限を�
 
 
 "--------------------------------------------------
+" Cursor setting
+"--------------------------------------------------
+let &t_SI="\e[6 q"
+let &t_EI="\e[2 q"
+" Other opsionts (\e[?)
+" 0 : blinking block.
+" 1 : blinking block(default).
+" 2 : steady block.
+" 3 : blinking underline.
+" 4 : steady underline.
+" 5 : blinking bar(xterm).
+" 6 : steady bar(xterm).
+augroup VIMCURSOR
+    au!
+    autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+
+
+"--------------------------------------------------
 " Edit setting
 "--------------------------------------------------
 set clipboard=unnamed,autoselect    " OSクリップボード使用、選択時自動コピー
