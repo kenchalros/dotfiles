@@ -48,4 +48,4 @@ while [ $# -gt 0 ];do
 done
 
 link_to_homedir
-command echo -e "Install completed!!! \e[m"
+command echo -e "Install completed!!!"
