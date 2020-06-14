@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
+#-------------------------------------------
 # Easier navigation:
+#-------------------------------------------
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
+alias bk="cd -"
 
+
+#-------------------------------------------
 # Shortcuts
+#-------------------------------------------
 alias dl="cd $HOME/Downloads"
 alias dt="cd $HOME/Desktop"
 alias p="cd $HOME/Documents/projects"
