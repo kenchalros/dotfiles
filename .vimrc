@@ -17,8 +17,9 @@ set fileformats=unix,dos,mac    " 改行コード自動判別(優先順)
 set t_Co=256                    " ターミナルで256色表示を使用
 set number                      " 行番号の表示
 "set ruler                       " 右下に行・列番号を表示
-"set list                        " 不可視文字を表示
-"set listchars=eol:\|,tab:>-,trail:~ " 不可視文字の置き換え設定
+set list                        " 不可視文字を表示
+" 不可視文字の置き換え設定
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 set noshowmode                  " 最下部のmode表示をoff(pluginで表示するため)
 set showcmd                     " 入力中のコマンドを画面の最下部に表示
 
@@ -64,7 +65,17 @@ set wildmode=list:longest,full  " 補完モード
     " "list:full"               複数のマッチがあるときは、すべてのマッチを羅列し、最初のマッチを補完する。
     " "list:longest"            複数のマッチがあるときは、すべてのマッチを羅列し、共通する最長の文字列までが補完される。
 
-set virtualedit+=block          " 短径選択でカーソル位置の制限を解除
+
+set spell spelllang+=cjk        " スペルチェック
+
+"T + ? で各種設定をtoggle
+nnoremap [toggle] <Nop>
+nmap T [toggle]
+nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
+nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
+nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
+nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
+nnoremap <silent> [toggle]n :setl number!<CR>:setl number?<CR>
 
 
 "--------------------------------------------------
@@ -72,7 +83,7 @@ set virtualedit+=block          " 短径選択でカーソル位置の制限を�
 "--------------------------------------------------
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
-" Other opsionts (\e[?)
+" Other options (\e[?)
 " 0 : blinking block.
 " 1 : blinking block(default).
 " 2 : steady block.
@@ -89,7 +100,7 @@ augroup END
 "--------------------------------------------------
 " Edit setting
 "--------------------------------------------------
-set clipboard=unnamed,autoselect    " OSクリップボード使用、選択時自動コピー
+set clipboard+=unnamed               " OSクリップボード使用
 set backspace=indent,eol,start      " バックスペースでなんでも消せるようにする
 
 set tabstop=4                   " <Tab>幅
