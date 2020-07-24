@@ -31,8 +31,10 @@ set colorcolumn=80              " 80行目に色をつける
 set nowrap                      " 折り返さない
 set textwidth=0                 " 自動的に改行が入るのを無効化
 
-colorscheme overflow            " カラースキーマ
-
+set background=dark
+if isdirectory(expand("~/.vim/colors/overflow.vim"))
+    "colorscheme overflow            " カラースキーマ
+endif
 
 "--------------------------------------------------
 " System setting
@@ -81,7 +83,7 @@ nnoremap <silent> [toggle]n :setl number!<CR>:setl number?<CR>
 "--------------------------------------------------
 " Cursor setting
 "--------------------------------------------------
-let &t_SI="\e[6 q"
+let &t_SI="\e[5 q"
 let &t_EI="\e[2 q"
 " Other options (\e[?)
 " 0 : blinking block.
@@ -158,7 +160,7 @@ nnoremap <silent> k gk
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" Ctrl + hjkl でウィンドウ間を移動
+" Ctrl + w + hjkl でウィンドウ間を移動
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k

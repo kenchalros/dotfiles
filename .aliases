@@ -15,6 +15,7 @@ alias bk="cd -"
 #-------------------------------------------
 alias dl="cd $HOME/Downloads"
 alias dt="cd $HOME/Desktop"
+alias dc="cd $HOME/Documents"
 alias p="cd $HOME/Documents/projects"
 alias gh="cd $HOME/git/github.com/"
 

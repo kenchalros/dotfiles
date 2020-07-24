@@ -21,10 +21,10 @@ unset file;
 #---------------------------------------------------
 # Color Setting
 COLOR_OFF="\033[0m"
-WHITE="\033[38;05;231m"
-BDIR="\033[48;05;37m"
-BON="\033[48;05;8m"
-BGIT="\033[48;05;70m"
+LIGHTBLUE="\033[1;38;05;87m"
+GRAY="\033[1;38;05;8m"
+PINK="\033[1;38;05;207m"
+ORANGE="\033[1;38;05;3m"
 
 # Git prompt
 . /usr/local/etc/bash_completion.d/git-prompt.sh
@@ -34,7 +34,7 @@ GIT_PS1_SHOWUNTRACKEDFILES=true # 追跡されていないファイルが存在�
 GIT_PS1_SHOWUPSTREAM="auto" # 上流からの進み,戻り,分岐(<,>,<>).
 
 export PROMPT_DIRTRIM=2
-export PS1="\n${BDIR}${WHITE} \w ${COLOR_OFF}\$(__git_ps1 '${BON} on ${COLOR_OFF}${BGIT}${WHITE} %s ${COLOR_OFF}') \n"
+export PS1="\n${LIGHTBLUE}\w${COLOR_OFF}\$(__git_ps1 ' on ${ORANGE}%s${COLOR_OFF}') \n"
 
 
 #---------------------------------------------------
