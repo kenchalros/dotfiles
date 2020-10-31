@@ -40,7 +40,7 @@ endif
 " System setting
 "--------------------------------------------------
 set nobackup                    " backupファイルを作らない
-set nowritebackup               " 
+set nowritebackup               "
 set noswapfile                  " swapファイルを作らない
 
 set hidden                      " バッファを閉じる代わりに隠す（Undo履歴を残すため）
@@ -58,17 +58,18 @@ set scrolloff=5                 " 画面に余裕をもたせてスクロール
 set infercase                   " 補完時に大文字小文字を区別しない
 set wildmenu                    " ファイル名補完有効
 set wildmode=list:longest,full  " 補完モード
-    " 補完モード
-    " ""                        最初のマッチのみを補完する
-    " "full"                    次のマッチを完全に補完する。最後のマッチの次には元の文字列が使われ、その次は再び最初のマッチが補完される
-    " "longest"                 共通する最長の文字列までが補完される。それ以上長い文字列を補完できないときは、次の候補に移る
-    " "longest:full"            "longest"と似ているが、'wildmenu'が有効ならばそれを開始する。
-    " "list"                    複数のマッチがあるときは、すべてのマッチを羅列する。
-    " "list:full"               複数のマッチがあるときは、すべてのマッチを羅列し、最初のマッチを補完する。
-    " "list:longest"            複数のマッチがあるときは、すべてのマッチを羅列し、共通する最長の文字列までが補完される。
+" 補完モード description
+" ""                        最初のマッチのみを補完する
+" "full"                    次のマッチを完全に補完する。最後のマッチの次には元の文字列が使われ、その次は再び最初のマッチが補完される
+" "longest"                 共通する最長の文字列までが補完される。それ以上長い文字列を補完できないときは、次の候補に移る
+" "longest:full"            "longest"と似ているが、'wildmenu'が有効ならばそれを開始する。
+" "list"                    複数のマッチがあるときは、すべてのマッチを羅列する。
+" "list:full"               複数のマッチがあるときは、すべてのマッチを羅列し、最初のマッチを補完する。
+" "list:longest"            複数のマッチがあるときは、すべてのマッチを羅列し、共通する最長の文字列までが補完される。
 
 
-set spell spelllang+=cjk        " スペルチェック
+"set spell                       " スペルチェック (T + sでOn/Offを切り返るため、デフォルトはOffに)
+set spelllang+=cjk              " スペルチェック対象から日本語を除外
 
 "T + ? で各種設定をtoggle
 nnoremap [toggle] <Nop>
@@ -102,8 +103,8 @@ augroup END
 "--------------------------------------------------
 " Edit setting
 "--------------------------------------------------
-set clipboard+=unnamed               " OSクリップボード使用
-set backspace=indent,eol,start      " バックスペースでなんでも消せるようにする
+set clipboard+=unnamed          " OSクリップボード使用
+set backspace=indent,eol,start  " バックスペースでなんでも消せるようにする
 
 set tabstop=4                   " <Tab>幅
 set softtabstop=4               " <Tab>幅(編集時)
@@ -114,7 +115,7 @@ set expandtab                   " <Tab>押下時に<Tab>ではなく、ホワイ
 set autoindent                  " 改行時にインデントを引き継いで改行する
 set smartindent                 " 前行の末尾に合わせてインデントを増減する
 
-set matchpairs& matchpairs+=<:> "対応括弧に'<'と'>'のペアを追加
+set matchpairs& matchpairs+=<:> " 対応括弧に'<'と'>'のペアを追加
 set showmatch                   " 括弧の対応をハイライトする
 set matchtime=1                 " 対応表示時間1秒(~10)
 
